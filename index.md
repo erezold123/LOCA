@@ -1,3 +1,36 @@
+LOCA is an algorithm for extracting canonical data coordinates from scientific measurements. It produces a nonlinear embedding that is approximately isometric to the unknown latent manifold structure of the data. Loca assumes a specific, broadly applicable stochastic sampling strategy, and successfully corrects for unknown measurement device deformations. 
+
+## Instalation
+1. git clone
+2. python setup.py install --user
+
+## Input
+### Neural network settings
+1. sigma: The standard deviation of the bursts in the embedding domain.
+2. hidden_layers: A list containing all the layers in the neural network, including the input and output layer.
+3. embedding_index: The index of the embedding layer inside the hidden_layers input.
+4. activation_type: The activation type that will be used in the network
+5. activation_dec_type: The activation type that will be used in the decoder (If not defined activation_type will be used).
+
+
+### Training settings
+1. AdditionalDataY: n -by- m -by- d matrix, where n is the amount of bursts, m is the number of points in each burst, and d is the ambient dimension of the data.
+2. AdditionalDataY_val: Same as in AdditionalDataY but for validation (only the n can attain a different value here).
+3. Epochs: Number of epochs.
+4. lr: Learning rate.
+5. verbose_every: int or None - The amount of epochs that will be passed between each printining of the train and validation loss. 
+6. early_stopping: True/False. An early stopping mechanism that will stop the training if the sum of the two Loca losses won't get better in the last 2000 epohcs. If AdditionalDataY_val will be supplied then the loss will be calculated on it, otherwise it will be based on AdditionalDataY.
+
+
+## Algorithm
+
+
+## TODO:
+1. Generate setup.py for installing the different packages used by loca
+
+
+
+
 ## Welcome 
 
 You can use the [editor on GitHub](https://github.com/Manuel83/sample/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
