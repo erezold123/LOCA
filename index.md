@@ -1,7 +1,8 @@
-![Example of Loca](https://github.com/erezpeter/LOCA/blob/master/website/example_loca_.jpg)
-
+![Example of Loca](https://github.com/erezpeter/LOCA/blob/master/website/algo_new.png)
 
 LOCA is an algorithm for extracting canonical data coordinates from scientific measurements. It produces a nonlinear embedding that is approximately isometric to the unknown latent manifold structure of the data. Loca assumes a specific, broadly applicable stochastic sampling strategy, and successfully corrects for unknown measurement device deformations. 
+
+![Example of Loca](https://github.com/erezpeter/LOCA/blob/master/website/example_loca_.jpg)
 
 ## Instalation
 1. git clone
