@@ -20,13 +20,15 @@ LOCA is an algorithm for extracting canonical data coordinates from scientific m
 
 
 ### Training settings
-1. train_data: n -by- m -by- d matrix, where n is the amount of bursts, m is the number of points in each burst, and d is the ambient dimension of the data.
-2. val_data: Same as in train_data but for validation (the values of m and d of this tensor should be the same as in train_data).
-3. Epochs: Number of epochs.
-4. lr: Learning rate.
-5. evaluate_every(Optional) - Int. The amount of epochs that will be passed between the evaluation of the losses based on the training data (AdditionalDataY) and validation data (AdditionalDataY_val) if is given.
-5. verbose(Optional): Boolean - Enables the printing of the losses evaluated evalutate_every epochs.
-6. early_stopping (Optional): Boolean. An early stopping mechanism that will stop the training if the sum of the two Loca losses won't get better in the last 2000 epohcs. If AdditionalDataY_val will be supplied then the loss will be calculated based on it, otherwise it will be based on AdditionalDataY. The mechanism will evaluate the loss every evaluate_every epochs.
+1. train_data -  n x m x d matrix, where n is the amount of bursts, m is the number of points in each burst, and d is the ambient dimension of the data.
+2. Epochs: Number of epochs.
+3. lr - Learning rate.
+4. batch_size(Optional) - The batch size that will be used for the GD. If not given, the whole data will serve as a single batch.
+5. val_data(Optional) - Same as in train_data but for validation (the values of m and d of this tensor should be the same as in train_data).
+6. evaluate_every(Optional) - Int. The amount of epochs that will be passed between the evaluation of the losses based on the training data (AdditionalDataY) and validation data (AdditionalDataY_val) if is given.
+7. verbose(Optional): Boolean - Enables the printing of the losses evaluated evalutate_every epochs.
+8. early_stopping (Optional): Boolean. An early stopping mechanism that will stop the training if the sum of the two Loca losses won't get better in the last 2000 epohcs. If AdditionalDataY_val will be supplied then the loss will be calculated based on it, otherwise it will be based on AdditionalDataY. The mechanism will evaluate the loss every evaluate_every epochs.
+9. train_only_decoder(Optional): Boolean. If True the training will only apply optimize the reconstruction loss, and will update only the weights in the decoder.
 
 ## Implementation details
 1. The last layer in the encoder and decoder will use the identity actiavtion function, no matter what was defined in the Training settings.
