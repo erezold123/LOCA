@@ -7,6 +7,8 @@ LOCA is an algorithm for extracting canonical data coordinates from scientific m
 <p float="left">
 <img src="website/example_loca_.jpg" height="300" /> 
 </p>
+
+
 ## Instalation
 1. git clone
 2. python setup.py install --user
