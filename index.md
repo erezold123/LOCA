@@ -27,7 +27,7 @@ LOCA is an algorithm for extracting canonical data coordinates from scientific m
 5. data_val(Optional) - Same as in train_data but for validation (the values of m and d of this tensor should be the same as in train_data).
 6. evaluate_every(Optional) - Int. The amount of epochs that will be passed between the evaluation of the losses based on the training data (data_train) and validation data (data_val) if is given.
 7. verbose(Optional): Boolean - Enables the printing of the losses evaluated evalutate_every epochs.
-8. early_stopping (Optional): Boolean. An early stopping mechanism that will stop the training if the sum of the two Loca losses won't get better in the last 2000 epohcs. If AdditionalDataY_val will be supplied then the loss will be calculated based on it, otherwise it will be based on AdditionalDataY. The mechanism will evaluate the loss every evaluate_every epochs.
+8. early_stopping (Optional): Boolean. An early stopping mechanism that will stop the training if the sum of the two Loca losses won't get better in the last 2000 epohcs. If data_val will be supplied then the loss will be calculated based on it, otherwise it will be based on data_train. The mechanism will evaluate the loss every evaluate_every epochs.
 9. train_only_decoder(Optional): Boolean. If True the training will only apply optimize the reconstruction loss, and will update only the weights in the decoder.
 
 ## Implementation details
