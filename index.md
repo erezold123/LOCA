@@ -7,20 +7,20 @@ LOCA is an algorithm for extracting canonical data coordinates from scientific m
 ## Input
 ### Neural network settings
 1. sigma: The standard deviation of the bursts in the embedding domain.
-2. hidden_layers: A list containing all the layers in the neural network, including the input and output layer.
-3. embedding_index: The index of the embedding layer inside the hidden_layers input.
-4. activation_type: The activation type that will be used in the network
-5. activation_dec_type: The activation type that will be used in the decoder (If not defined activation_type will be used).
+2. encoder_layers: A list containing all the layers in the encoder's neural network, including the input and output layer.
+3. decoder_layers: A list containing all the layers in the decoders's neural network, including the input and output layer.
+4. activation_enc: The activation type that will be used in the encoder's neural network.
+5. activation_dec(Optional): The activation type that will be used in the decoder (If not defined activation_enc will be used).
 
 
 ### Training settings
-1. AdditionalDataY: n -by- m -by- d matrix, where n is the amount of bursts, m is the number of points in each burst, and d is the ambient dimension of the data.
-2. AdditionalDataY_val: Same as in AdditionalDataY but for validation (only the n can attain a different value here).
+1. train_data: n -by- m -by- d matrix, where n is the amount of bursts, m is the number of points in each burst, and d is the ambient dimension of the data.
+2. val_data: Same as in train_data but for validation (the values of m and d of this tensor should be the same as in train_data).
 3. Epochs: Number of epochs.
 4. lr: Learning rate.
-5. evaluate_every - int. The amount of epochs that will be passed between the evaluation of the losses based on the training data (AdditionalDataY) and validation data (AdditionalDataY_val) if is given.
-5. verbose: True/False - Enables the printing of the losses evaluated evalutate_every epochs.
-6. early_stopping: True/False. An early stopping mechanism that will stop the training if the sum of the two Loca losses won't get better in the last 2000 epohcs. If AdditionalDataY_val will be supplied then the loss will be calculated based on it, otherwise it will be based on AdditionalDataY. The mechanism will evaluate the loss every evaluate_every epochs.
+5. evaluate_every(Optional) - Int. The amount of epochs that will be passed between the evaluation of the losses based on the training data (AdditionalDataY) and validation data (AdditionalDataY_val) if is given.
+5. verbose(Optional): Boolean - Enables the printing of the losses evaluated evalutate_every epochs.
+6. early_stopping (Optional): Boolean. An early stopping mechanism that will stop the training if the sum of the two Loca losses won't get better in the last 2000 epohcs. If AdditionalDataY_val will be supplied then the loss will be calculated based on it, otherwise it will be based on AdditionalDataY. The mechanism will evaluate the loss every evaluate_every epochs.
 
 
 
