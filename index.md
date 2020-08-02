@@ -1,11 +1,12 @@
-<p float="center">
+<p float="left">
   <img src="website/algo_new.png" height="300" />
-  <img src="website/example_loca_.jpg" height="300" /> 
 </p>
 
 LOCA is an algorithm for extracting canonical data coordinates from scientific measurements. It produces a nonlinear embedding that is approximately isometric to the unknown latent manifold structure of the data. Loca assumes a specific, broadly applicable stochastic sampling strategy, and successfully corrects for unknown measurement device deformations. 
 
-
+<p float="left">
+<img src="website/example_loca_.jpg" height="300" /> 
+</p>
 ## Instalation
 1. git clone
 2. python setup.py install --user
