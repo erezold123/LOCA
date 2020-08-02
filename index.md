@@ -22,6 +22,8 @@ LOCA is an algorithm for extracting canonical data coordinates from scientific m
 5. verbose(Optional): Boolean - Enables the printing of the losses evaluated evalutate_every epochs.
 6. early_stopping (Optional): Boolean. An early stopping mechanism that will stop the training if the sum of the two Loca losses won't get better in the last 2000 epohcs. If AdditionalDataY_val will be supplied then the loss will be calculated based on it, otherwise it will be based on AdditionalDataY. The mechanism will evaluate the loss every evaluate_every epochs.
 
+## Implementation details
+1. The last layer in the encoder and decoder will use the identity actiavtion function, no matter what was defined in the Training settings.
 
 
 ## TODO:
