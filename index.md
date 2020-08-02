@@ -18,11 +18,10 @@ LOCA is an algorithm for extracting canonical data coordinates from scientific m
 2. AdditionalDataY_val: Same as in AdditionalDataY but for validation (only the n can attain a different value here).
 3. Epochs: Number of epochs.
 4. lr: Learning rate.
-5. verbose_every: int or None - The amount of epochs that will be passed between each printining of the train and validation loss. 
-6. early_stopping: True/False. An early stopping mechanism that will stop the training if the sum of the two Loca losses won't get better in the last 2000 epohcs. If AdditionalDataY_val will be supplied then the loss will be calculated on it, otherwise it will be based on AdditionalDataY.
+5. evaluate_every - int. The amount of epochs that will be passed between the evaluation of the losses based on the training data (AdditionalDataY) and validation data (AdditionalDataY_val) if is given.
+5. verbose: True/False - Enables the printing of the losses evaluated evalutate_every epochs.
+6. early_stopping: True/False. An early stopping mechanism that will stop the training based if the sum of the two Loca losses won't get better in the last 2000 epohcs. If AdditionalDataY_val will be supplied then the loss will be calculated on it, otherwise it will be based on AdditionalDataY. The mechanism will evaluate the loss every evaluate_every epochs.
 
-
-## Algorithm
 
 
 ## TODO:
